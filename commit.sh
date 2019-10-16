@@ -2,7 +2,7 @@
 
 user=$LOGNAME
 
-workname="app-iv3"
+workname="script"
 basepath=`pwd`
 path="$basepath/$workname"
 path_log="$basepath/gitlog"
@@ -55,8 +55,9 @@ function upload(){
 }
 
 gitstatus=`git status`
+flag="nothing to commit"
 #判断是否有改动
-if [[ $gitstatus == *nothing* ]];then 
+if [[ $gitstatus == *$flag* ]];then 
 
 echo "没有改动,不用提交" >> $file_log
 # 拉取最新代码
